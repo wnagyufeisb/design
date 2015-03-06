@@ -1,0 +1,435 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+<link rel="stylesheet" href="${rc.contextPath}/resources/css/index.css" type="text/css" media="screen"/>
+        <!--[if IE]>
+		 <style>
+                    .circle{
+                        background:transparent url(images/circleIE.gif) no-repeat top left;
+                    }
+                    .description ul a{
+                        font-weight:normal;
+                    }
+		</style>
+        <![endif]-->
+		
+		<link rel="Stylesheet" type="text/css" href="${rc.contextPath}/resources/css/loginDialog.css" />
+<script type="text/javascript" src="${rc.contextPath}/resources/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+});
+
+
+
+
+
+
+
+</script>
+		
+</head>
+
+<body>
+ <div id="content">
+          <div class="title"></div>
+            <div class="wrapper">
+                <div id="images" class="images">
+                    <img id="image_about" src="${rc.contextPath}/resources/images/1.png" alt="" width="402" height="402" style="display:block;"/>
+                    <img id="image_portfolio" src="${rc.contextPath}/resources/images/2.png" alt="" width="402" height="402"/>
+                    <img id="image_contact" src="${rc.contextPath}/resources/images/3.png" alt="" width="402" height="402" />
+                </div>
+                <div class="circleBig">
+                    <div id="menu" class="menu">
+                        <a id="about" class="about" href="#">登录</a>
+                        <br/>
+                        <a id="portfolio" class="portfolio" href="#">小区美景</a>
+                        <br/>
+                        <a id="contact" class="contact" href="#">
+                        欢迎咨询</a>
+                    </div>
+                </div>
+            </div>
+            <div id="circle_about" class="circle">
+                <div class="description">
+                    <ul>
+                        <li><a id="userLoad" href="#">住户</a></li>
+                        <li><a href="#" id="superLoad">物业</a></li>
+                        <li><a href="#" id="companyLoad">公司</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="circle_portfolio" class="circle">
+                <div class="description">
+                    <div class="thumbs">
+                        <a href="http://www.lanrenzhijia.com/"><img src="thumbs/1.jpg" alt=""/></a>
+                        <a href="http://www.lanrenzhijia.com/"><img src="thumbs/2.jpg" alt=""/></a>
+                        <a href="http://www.lanrenzhijia.com/"><img src="thumbs/3.jpg" alt=""/></a>
+                        <a href="http://www.lanrenzhijia.com/"><img src="thumbs/4.jpg" alt=""/></a>
+                        <a href="http://www.lanrenzhijia.com/"><img src="thumbs/5.jpg" alt=""/></a>
+                        <a href="http://www.lanrenzhijia.com/"><img src="thumbs/6.jpg" alt=""/></a>
+                        <a href="http://www.lanrenzhijia.com/"><img src="thumbs/7.jpg" alt=""/></a>
+                        <a href="http://www.lanrenzhijia.com/"><img src="thumbs/8.jpg" alt=""/></a>
+                        <a href="http://www.lanrenzhijia.com/"><img src="thumbs/9.jpg" alt=""/></a>
+                    </div>
+                </div>
+            </div>
+            <div id="circle_contact" class="circle">
+                <div class="description">
+                    <ul>
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+			
+        </div>
+<!--弹出层时背景层DIV-->
+<!--用户-->
+ <div id="userLoginBox" class="LoginBox">
+        <div class="row1">
+            住户登录<a href="javascript:void(0)" title="关闭窗口" class="close_btn" id="closeBtn">×</a>
+        </div>
+        <div class="row">
+            用户名: <span class="inputBox">
+                <input type="text" id="userName" class="txtName" placeholder="账号/邮箱" />
+            </span><a href="javascript:void(0)" title="提示" class="warning" id="warn">*</a>
+        </div>
+        <div class="row">
+            密&nbsp;&nbsp;&nbsp;&nbsp;码: <span class="inputBox">
+                <input type="text" id="userPwd" class="txtPwd" placeholder="密码" />
+            </span><a href="javascript:void(0)" title="提示" class="warning" id="warn2">*</a>
+        </div>
+        <div class="row">
+            <a href="javascript:void(0);" id="userLoginbtn" class="loginbtn">登录</a>
+        </div>
+    </div>
+<!--物业-->
+<div id="superLoginBox" class="LoginBox">
+        <div class="row1">
+            物业登录<a href="javascript:void(0)" title="关闭窗口" class="close_btn" id="closeBtn">×</a>
+        </div>
+        <div class="row">
+            用户名: <span class="inputBox">
+                <input type="text" id="superName" class="txtName" placeholder="账号/邮箱" />
+            </span><a href="javascript:void(0)" title="提示" class="warning" id="warn">*</a>
+        </div>
+        <div class="row">
+            密&nbsp;&nbsp;&nbsp;&nbsp;码: <span class="inputBox">
+                <input type="text" id="superPwd" class="txtPwd" placeholder="密码" />
+            </span><a href="javascript:void(0)" title="提示" class="warning" id="warn2">*</a>
+        </div>
+        <div class="row">
+            <a href="#" id="superLoginbtn" class="loginbtn">登录</a>
+        </div>
+    </div>
+
+    <!--公司-->
+<div id="companyLoginBox" class="LoginBox">
+        <div class="row1">
+            公司登录<a href="javascript:void(0)" title="关闭窗口" class="close_btn" id="closeBtn">×</a>
+        </div>
+        <div class="row">
+            用户名: <span class="inputBox">
+                <input type="text" id="companyName" class="txtName" placeholder="账号/邮箱" />
+            </span><a href="javascript:void(0)" title="提示" class="warning" id="warn">*</a>
+        </div>
+        <div class="row">
+            密&nbsp;&nbsp;&nbsp;&nbsp;码: <span class="inputBox">
+                <input type="text" id="companyPwd" class="txtPwd" placeholder="密码" />
+            </span><a href="javascript:void(0)" title="提示" class="warning" id="warn2">*</a>
+        </div>
+        <div class="row">
+            <a href="#" id="companyLoginbtn" class="loginbtn">登录</a>
+        </div>
+    </div>
+
+
+        <!-- 住户登录-->
+	<script type="text/javascript">
+	$(document).ready(function(){
+		//弹出登录
+		$("#userLoad").hover(function () {
+			$(this).stop().animate({
+				opacity: '1'
+			}, 600);
+		}, function () {
+			$(this).stop().animate({
+				opacity: '0.6'
+			}, 1000);
+		}).on('click', function () {
+			$("body").append("<div id='mask'></div>");
+			$("#mask").addClass("mask").fadeIn("slow");
+			$("#userLoginBox").fadeIn("slow");
+		});
+		//
+		//按钮的透明度
+		$("#userLoginbtn").hover(function () {
+			$(this).stop().animate({
+				opacity: '1'
+			}, 600);
+		}, function () {
+			$(this).stop().animate({
+				opacity: '0.8'
+			}, 1000);
+		});
+		//文本框不允许为空---按钮触发
+		$("#userLoginbtn").on('click', function () {
+			var userName = $("#userName").val();
+			var userPwd = $("#userPwd").val();
+			if (userName == "" || userName == undefined || userName == null) {
+				if (userPwd == "" || userPwd == undefined || userPwd == null) {
+					$(".warning").css({ display: 'block' });
+				}
+				else {
+					$("#warn").css({ display: 'block' });
+					$("#warn2").css({ display: 'none' });
+				}
+			}
+			else {
+				if (userPwd == "" || userPwd == undefined || userPwd == null) {
+					$("#warn").css({ display: 'none' });
+					$(".warn2").css({ display: 'block' });
+				}
+				else {
+					$(".warning").css({ display: 'none' });
+				}
+			}
+			if(userName != "" &&userName != undefined && userName != null&&userPwd != "" && userPwd != undefined && userPwd != null){
+			var type="user";
+		$.ajax
+		({
+			type : "POST",
+			url : "${rc.contextPath}/design/load",//登录的接口
+			data :{"userAccount":userName,"userPwd":userPwd,"type":type},
+	
+			success : function(resultBean) {
+             if(resultBean.isSuccess){
+			 alert("登录成功")
+			 location.href ="${rc.contextPath}/design/userPage?userName="+resultBean.data.name+"&userLoadCode="+resultBean.data.code;
+			 }
+			 else{
+			 alert(resultBean.message);
+			 }
+			},
+			error : function(resultBean) {
+             alert("登录失败");
+				}
+		});
+		}
+			
+				
+		});
+		//文本框不允许为空---单个文本触发
+		$("#userName").on('blur', function () {
+			var userName = $("#userName").val();
+			if (userName == "" || userName == undefined || userName == null) {
+				$("#warn").css({ display: 'block' });
+			}
+			else {
+				$("#warn").css({ display: 'none' });
+			}
+		});
+		$("#userName").on('focus', function () {
+			$("#warn").css({ display: 'none' });
+		});
+		//
+		$("#userPwd").on('blur', function () {
+			var userPaw = $("#userPwd").val();
+			if (userPaw == "" || userPaw == undefined || userPaw == null) {
+				$("#warn2").css({ display: 'block' });
+			}
+			else {
+				$("#warn2").css({ display: 'none' });
+			}
+		});
+		$("#userPwd").on('focus', function () {
+			$("#warn2").css({ display: 'none' });
+		});
+		//关闭
+		$(".close_btn").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+			$("#userLoginBox").fadeOut("fast");
+			$("#mask").css({ display: 'none' });
+		});
+	});
+	</script>	
+
+
+        <!-- 物业登录 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		//弹出登录
+		$("#superLoad").hover(function () {
+			$(this).stop().animate({
+				opacity: '1'
+			}, 600);
+		}, function () {
+			$(this).stop().animate({
+				opacity: '0.6'
+			}, 1000);
+		}).on('click', function () {
+			$("body").append("<div id='mask'></div>");
+			$("#mask").addClass("mask").fadeIn("slow");
+			$("#superLoginBox").fadeIn("slow");
+		});
+		//
+		//按钮的透明度
+		$("#superLoginbtn").hover(function () {
+			$(this).stop().animate({
+				opacity: '1'
+			}, 600);
+		}, function () {
+			$(this).stop().animate({
+				opacity: '0.8'
+			}, 1000);
+		});
+		//文本框不允许为空---按钮触发
+		$("#superLoginbtn").on('click', function () {
+			var userName = $("#superName").val();
+			var userPwd = $("#superPwd").val();
+			if (userName == "" || userName == undefined || userName == null) {
+				if (userPwd == "" || userPwd == undefined || userPwd == null) {
+					$(".warning").css({ display: 'block' });
+				}
+				else {
+					$("#warn").css({ display: 'block' });
+					$("#warn2").css({ display: 'none' });
+				}
+			}
+			else {
+				if (userPwd == "" || userPwd == undefined || userPwd == null) {
+					$("#warn").css({ display: 'none' });
+					$(".warn2").css({ display: 'block' });
+				}
+				else {
+					$(".warning").css({ display: 'none' });
+				}
+			}
+		});
+		//文本框不允许为空---单个文本触发
+		$("#superName").on('blur', function () {
+			var userName = $("#superName").val();
+			if (userName == "" || userName == undefined || userName == null) {
+				$("#warn").css({ display: 'block' });
+			}
+			else {
+				$("#warn").css({ display: 'none' });
+			}
+		});
+		$("#superName").on('focus', function () {
+			$("#warn").css({ display: 'none' });
+		});
+		//
+		$("#superPwd").on('blur', function () {
+			var userPaw = $("#superPwd").val();
+			if (userPaw == "" || userPaw == undefined || userPaw == null) {
+				$("#warn2").css({ display: 'block' });
+			}
+			else {
+				$("#warn2").css({ display: 'none' });
+			}
+		});
+		$("#superPwd").on('focus', function () {
+			$("#warn2").css({ display: 'none' });
+		});
+		//关闭
+		$(".close_btn").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+			$("#superLoginBox").fadeOut("fast");
+			$("#mask").css({ display: 'none' });
+		});
+	});
+	</script>	
+
+     <!-- 公司登录 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		//弹出登录
+		$("#companyLoad").hover(function () {
+			$(this).stop().animate({
+				opacity: '1'
+			}, 600);
+		}, function () {
+			$(this).stop().animate({
+				opacity: '0.6'
+			}, 1000);
+		}).on('click', function () {
+			$("body").append("<div id='mask'></div>");
+			$("#mask").addClass("mask").fadeIn("slow");
+			$("#companyLoginBox").fadeIn("slow");
+		});
+		//
+		//按钮的透明度
+		$("#companyLoginbtn").hover(function () {
+			$(this).stop().animate({
+				opacity: '1'
+			}, 600);
+		}, function () {
+			$(this).stop().animate({
+				opacity: '0.8'
+			}, 1000);
+		});
+		//文本框不允许为空---按钮触发
+		$("#companyLoginbtn").on('click', function () {
+			var userName = $("#companyName").val();
+			var userPwd = $("#companyPwd").val();
+			if (userName == "" || userName == undefined || userName == null) {
+				if (userPwd == "" || userPwd == undefined || userPwd == null) {
+					$(".warning").css({ display: 'block' });
+				}
+				else {
+					$("#warn").css({ display: 'block' });
+					$("#warn2").css({ display: 'none' });
+				}
+			}
+			else {
+				if (userPwd == "" || userPwd == undefined || userPwd == null) {
+					$("#warn").css({ display: 'none' });
+					$(".warn2").css({ display: 'block' });
+				}
+				else {
+					$(".warning").css({ display: 'none' });
+				}
+			}
+		});
+		//文本框不允许为空---单个文本触发
+		$("#companyName").on('blur', function () {
+			var userName = $("#companyName").val();
+			if (userName == "" || userName == undefined || userName == null) {
+				$("#warn").css({ display: 'block' });
+			}
+			else {
+				$("#warn").css({ display: 'none' });
+			}
+		});
+		$("#companyName").on('focus', function () {
+			$("#warn").css({ display: 'none' });
+		});
+		//
+		$("#companyPwd").on('blur', function () {
+			var userPaw = $("#companyPwd").val();
+			if (userPaw == "" || userPaw == undefined || userPaw == null) {
+				$("#warn2").css({ display: 'block' });
+			}
+			else {
+				$("#warn2").css({ display: 'none' });
+			}
+		});
+		$("#companyPwd").on('focus', function () {
+			$("#warn2").css({ display: 'none' });
+		});
+		//关闭
+		$(".close_btn").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+			$("#companyLoginBox").fadeOut("fast");
+			$("#mask").css({ display: 'none' });
+		});
+	});
+	</script>	
+
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+        <script type="text/javascript" src="${rc.contextPath}/resources/js/jquery.path.js"></script>
+        <script type="text/javascript" src="${rc.contextPath}/resources/js/lanrenzhijia.js"></script>
+</body>
+</html>

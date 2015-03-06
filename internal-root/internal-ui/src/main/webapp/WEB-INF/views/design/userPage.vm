@@ -1,0 +1,60 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>用户界面</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="${rc.contextPath}/resources/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/resources/js/jquery.easing.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/resources/js/jquery.sweet-menu-1.0.js"></script>
+<script type="text/javascript"> 
+			$(document).ready(function(){ 
+				
+                $('#backMenu').sweetMenu({
+					top: 40,
+					padding: 8,
+					iconSize: 48,
+					easing: 'easeOutBounce',
+					duration: 500,
+					icons: [
+						'images/back.png'
+					]
+				});
+				
+				$('#exampleMenu').sweetMenu({
+					top: 200,
+					padding: 8,
+					iconSize: 48,
+					easing: 'easeOutBounce',
+					duration: 500,
+					icons: [
+						'images/home.png',
+						'images/comments.png',
+						'images/red_heart.png',
+						'images/male_user.png',
+						'images/yellow_mail.png',
+						'images/computer.png'
+					]
+				});
+			});
+		</script>
+ <link href="${rc.contextPath}/resources/userPage.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<ul id="backMenu">
+  <li><a>退出登录</a></li>
+</ul>
+<ul id="exampleMenu">
+  <li><a href="#home">维修管理</a></li>
+  <li><a href="#home">通知</a></li>
+  <li><a href="#home">投诉</a></li>
+  <li><a href="#home">个人管理</a></li>
+  <li><a href="#home">有关规定</a></li>
+</ul>
+<h1>$!{userName}的个人空间</h1>
+<br>
+
+</body>
+</html>

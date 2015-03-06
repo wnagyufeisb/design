@@ -34,9 +34,12 @@
 
 
 
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+
+	<!-- Processes application requests -->
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -46,6 +49,7 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
@@ -62,26 +66,5 @@
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
- 	<filter>
-		<filter-name>AuthenticationFilter</filter-name>
-		<filter-class>cn.gyyx.oa.stage.auth.AuthenticationFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>AuthenticationFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-
- 
- 	<filter>
-		<filter-name>URLAccessFilter</filter-name>
-		<filter-class>cn.gyyx.oa.stage.auth.URLAccessFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>URLAccessFilter</filter-name>
-		<url-pattern>/newyear/*</url-pattern>
-	</filter-mapping> 
-
-
 </web-app>
 

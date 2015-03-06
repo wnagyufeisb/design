@@ -51,6 +51,6 @@
 		</beans:property>
 	</beans:bean>
 
-	<context:component-scan base-package="cn.gyyx.oa" />
+	<context:component-scan base-package="cn.cj" />
 
 </beans:beans>
