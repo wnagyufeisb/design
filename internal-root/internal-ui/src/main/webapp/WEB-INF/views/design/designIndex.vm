@@ -98,7 +98,7 @@ $(document).ready(function() {
         </div>
         <div class="row">
             密&nbsp;&nbsp;&nbsp;&nbsp;码: <span class="inputBox">
-                <input type="text" id="userPwd" class="txtPwd" placeholder="密码" />
+                <input type="password" id="userPwd" class="txtPwd" placeholder="密码" />
             </span><a href="javascript:void(0)" title="提示" class="warning" id="warn2">*</a>
         </div>
         <div class="row">
@@ -207,9 +207,12 @@ $(document).ready(function() {
 			success : function(resultBean) {
              if(resultBean.isSuccess){
 			 alert("登录成功")
-			 location.href ="${rc.contextPath}/design/userPage?userName="+resultBean.data.name+"&userLoadCode="+resultBean.data.code;
+			 $("#userName").val("");
+			 $("#userPwd").val("");
+			 location.href ="${rc.contextPath}/design/userPage";
 			 }
 			 else{
+			 $("#userPwd").val("");
 			 alert(resultBean.message);
 			 }
 			},

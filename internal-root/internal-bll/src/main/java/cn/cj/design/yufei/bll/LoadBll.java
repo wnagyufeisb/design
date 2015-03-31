@@ -36,6 +36,7 @@ public class LoadBll {
 			resultBean.setIsSuccess(true);
 			resultBean.setMessage("登陆成功");
 			resultBean.setData(loadBean);
+			
 		}
 		//如果不存在
 		else{

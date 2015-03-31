@@ -10,7 +10,17 @@
 <script type="text/javascript" src="${rc.contextPath}/resources/js/jquery.sweet-menu-1.0.js"></script>
 <script type="text/javascript"> 
 			$(document).ready(function(){ 
-				
+					 
+				 $("#backMenu").click(function(options){
+				 alert("感谢使用");
+				  location.href ="${rc.contextPath}/design/index";
+				 });
+				 
+				 	 
+				 $("#repair").click(function(options){
+				 });
+				 
+				 
                 $('#backMenu').sweetMenu({
 					top: 40,
 					padding: 8,
@@ -37,9 +47,77 @@
 						'images/computer.png'
 					]
 				});
+				
+	
+				
 			});
-		</script>
- <link href="${rc.contextPath}/resources/userPage.css" type="text/css" rel="stylesheet">
+			
+	function fun1()
+	{
+		parentDialog.close();
+	}
+	
+	function  funComplain()
+	{
+	
+	      
+ 
+			var diag2 = new Dialog();
+			diag2.Width = 500;
+			diag2.Height = 300;
+			diag2.Title = "投诉"; 
+			diag2.InnerHtml="<div id='zong'><label>投诉内容</label><input id='supername' type='text' /></div>";
+			diag2.OKEvent = function(){diag.close();};//点击确定后调用的方法
+			diag2.show();
+	}
+	
+	function funStatute()
+	
+	{
+	//获取相关规定页面的ajax
+	  $.
+			ajax({
+                    url:"${rc.contextPath}/design/statute",
+                    type: "POST",
+                    data: {
+                    },
+                    dataType: "JSON",
+                    success: function (result) {
+					
+	         var diag3 = new Dialog();
+			diag3.Width = 600;
+			diag3.Height = 400;
+			diag3.Title = "相关规定"; 
+            diag3.InnerHtml=result;
+			diag3.OKEvent = function(){diag.close();};//点击确定后调用的方法
+			diag3.show();
+                     
+                    },
+					error:function (result) {
+					alert("获取相关界面错误");
+                     
+                    }
+                });
+	         
+	}
+	var IMAGESPATH = '${rc.contextPath}/resources/images/DialogImages1/'; 
+	</script>
+			
+ <link href="${rc.contextPath}/resources/css/userPage.css" type="text/css" rel="stylesheet">
+	<style>
+	#content { padding-left:50px; padding-right:50px; }
+	#content h2 { font-size:20px; color:#069; padding-top:8px; margin-bottom:8px; }
+	#content h3 { margin:8px 0; font-size:14px; COLOR:#693; }
+	#content h4 { margin:8px 0; font-size:16px; COLOR:#690; }
+	#content div.item { margin-top:10px; margin-bottom:10px; border:#eee solid 4px; padding:10px; }
+	hr { clear:both; margin:7px 0; +margin: 0;
+	border:0 none; font-size: 1px; line-height:1px; color: #069; background-color:#069; height: 1px; }
+	.infobar { background:#fff9e3; border:1px solid #fadc80; color:#743e04; }
+	.buttonStyle{width:64px;height:22px;line-height:22px;color:#369;text-align:center;background:url(${rc.contextPath}/resources/images/DialogImages1/buticon.gif) no-repeat left top;border:0;font-size:12px;}
+	.buttonStyle:hover{background:url(${rc.contextPath}/resources/images/DialogImages1/buticon.gif) no-repeat left -23px;}
+	</style>
+	<script type="text/javascript" src="${rc.contextPath}/resources/js/DialogJs1/zDrag.js"></script>
+	<script type="text/javascript" src="${rc.contextPath}/resources/js/DialogJs1/zDialog.js"></script>
 </head>
 
 <body>
@@ -47,13 +125,13 @@
   <li><a>退出登录</a></li>
 </ul>
 <ul id="exampleMenu">
-  <li><a href="#home">维修管理</a></li>
+  <li><a href="#home"  id="repair">维修管理</a></li>
   <li><a href="#home">通知</a></li>
-  <li><a href="#home">投诉</a></li>
+  <li><a  id="complain" onClick="funComplain()" href="#home">投诉</a></li>
   <li><a href="#home">个人管理</a></li>
-  <li><a href="#home">有关规定</a></li>
+  <li><a id="statute" onClick="funStatute()" href="#home">有关规定</a></li>
 </ul>
-<h1>$!{userName}的个人空间</h1>
+<h1>$!{userInfo.name}的个人空间</h1>
 <br>
 
 </body>
